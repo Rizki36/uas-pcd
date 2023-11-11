@@ -41,14 +41,18 @@ const Sidebar = () => {
   return (
     <div className="bg-base-200">
       <div className="mx-auto text-center my-2">
-        <a className="btn btn-ghost normal-case text-xl">
+        <a
+          href="https://devfitra.com"
+          className="btn btn-ghost normal-case text-xl"
+          target="_blank"
+        >
           <img height={32} width="auto" className="h-8 w-auto" src={Logo.src} />
           DevFitra
         </a>
       </div>
       <ul className="menu menu-md w-56">
-        {menuItems.map((item) => (
-          <li>
+        {menuItems.map((item, index) => (
+          <li key={index}>
             <a href={item.href}>{item.label}</a>
           </li>
         ))}
@@ -62,6 +66,8 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  if (typeof window !== "undefined") return;
+
   return (
     <html lang="en">
       <body className={inter.className}>
