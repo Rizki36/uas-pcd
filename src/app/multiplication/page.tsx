@@ -1,4 +1,5 @@
 "use client";
+import { clipping } from "@/helper";
 import React from "react";
 
 const Multiplication = () => {
@@ -61,9 +62,9 @@ const Multiplication = () => {
 
     const inputPixels = inputImageData.data;
     for (let i = 0; i < inputPixels.length; i += 4) {
-      inputPixels[i] = inputPixels[i] * multiple;
-      inputPixels[i + 1] = inputPixels[i + 1] * multiple;
-      inputPixels[i + 2] = inputPixels[i + 2] * multiple;
+      inputPixels[i] = clipping(inputPixels[i] * multiple);
+      inputPixels[i + 1] = clipping(inputPixels[i + 1] * multiple);
+      inputPixels[i + 2] = clipping(inputPixels[i + 2] * multiple);
     }
     outputCtx.putImageData(inputImageData, 0, 0);
   };
