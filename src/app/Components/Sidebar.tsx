@@ -16,6 +16,10 @@ const menuItems: {
     label: "To Negative",
   },
   {
+    href: "/addition",
+    label: "Addition",
+  },
+  {
     href: "/subtraction",
     label: "Subtraction",
   },
