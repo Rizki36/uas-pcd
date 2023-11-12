@@ -1,9 +1,8 @@
 "use client";
-
 import { clipping } from "@/helper";
 import React from "react";
 
-const Addition = () => {
+const Subtraction = () => {
   const inputACanvasRef = React.useRef<HTMLCanvasElement>(null);
   const inputBCanvasRef = React.useRef<HTMLCanvasElement>(null);
   const outputCanvasRef = React.useRef<HTMLCanvasElement>(null);
@@ -66,12 +65,12 @@ const Addition = () => {
       const end = Math.min(start + chunkSize, outputPixels.length);
 
       for (let j = start; j < end; j += 4) {
-        outputPixels[j] = clipping(inputAPixels[j] + inputBPixels[j]);
+        outputPixels[j] = clipping(inputAPixels[j] - inputBPixels[j]);
         outputPixels[j + 1] = clipping(
-          inputAPixels[j + 1] + inputBPixels[j + 1]
+          inputAPixels[j + 1] - inputBPixels[j + 1]
         );
         outputPixels[j + 2] = clipping(
-          inputAPixels[j + 2] + inputBPixels[j + 2]
+          inputAPixels[j + 2] - inputBPixels[j + 2]
         );
         outputPixels[j + 3] = 255;
       }
@@ -218,4 +217,4 @@ const Addition = () => {
   );
 };
 
-export default Addition;
+export default Subtraction;
