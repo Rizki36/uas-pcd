@@ -37,7 +37,7 @@ const Sidebar = () => {
   const pathname = usePathname();
 
   return (
-    <div className="bg-base-200">
+    <div className="bg-base-200 mb-3">
       <div className="mx-auto text-center my-2">
         <a
           href="https://devfitra.com"
@@ -48,7 +48,7 @@ const Sidebar = () => {
           DevFitra
         </a>
       </div>
-      <ul className="menu menu-md w-56">
+      <ul className="menu menu-md w-full md:w-56">
         {menuItems.map((item, index) => (
           <li key={index}>
             <a

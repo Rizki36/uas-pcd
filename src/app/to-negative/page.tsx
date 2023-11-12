@@ -62,8 +62,8 @@ const ToNegative = () => {
   };
 
   return (
-    <div className="h-full flex flex-col justify-center items-center">
-      <div className="grid grid-cols-2 mb-8 w-full">
+    <div className="h-full flex flex-col justify-center items-center py-4">
+      <div className="order-2 md:order-1 grid md:grid-cols-2 mb-8 w-full">
         <div className="flex items-center justify-center flex-col">
           <div className="mb-3">Input</div>
           <canvas
@@ -81,7 +81,7 @@ const ToNegative = () => {
           />
         </div>
       </div>
-      <div className="flex flex-col mx-auto w-96">
+      <div className="order-1 md:order-2 mb-5 md:mb-0 flex flex-col mx-auto w-96">
         <input
           type="file"
           accept="image/*"

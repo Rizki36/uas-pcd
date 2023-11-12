@@ -8,6 +8,7 @@ const Multiplication = () => {
   const outputCanvasRef = React.useRef<HTMLCanvasElement>(null);
 
   const onInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setMultiple(1);
     const fileList = e.target.files;
     const file = fileList?.[0];
 
@@ -71,8 +72,16 @@ const Multiplication = () => {
 
   return (
     <div className="h-full flex flex-col justify-center items-center">
-      <div className="grid grid-cols-[1fr,100px,1fr] mb-8 w-full">
-        <div className="flex items-center justify-center flex-col">
+      <div className="flex flex-col mx-auto w-96 mb-9">
+        <input
+          type="file"
+          accept="image/*"
+          className="file-input file-input-bordered w-full"
+          onChange={onInputChange}
+        />
+      </div>
+      <div className="grid gap-y-3 md:gap-y-0 md:grid-cols-[1fr,100px,1fr] mb-8 w-full">
+        <div className="flex order-2 md:order-1 items-center justify-center flex-col">
           <div className="mb-3">Input</div>
           <canvas
             ref={inputCanvasRef}
@@ -80,11 +89,11 @@ const Multiplication = () => {
             className="w-96 h-64 border mx-auto mt-3"
           />
         </div>
-        <div className="flex items-center justify-center flex-col">
+        <div className="flex text-xs order-1 md:order-2 items-center justify-center flex-col">
           Multiple by
           <input
             type="number"
-            className="input input-bordered w-full max-w-xs"
+            className="input input-bordered text-xs w-full max-w-[384px] md:max-w-[70px]"
             value={multiple}
             onChange={(e) => {
               setMultiple(Number(e.target.value));
@@ -93,7 +102,7 @@ const Multiplication = () => {
             step={0.1}
           />
         </div>
-        <div className="flex items-center justify-center flex-col">
+        <div className="flex order-3 md:order-3 items-center justify-center flex-col">
           <div className="mb-3">Output</div>
           <canvas
             ref={outputCanvasRef}
@@ -101,14 +110,6 @@ const Multiplication = () => {
             className="w-96 h-64 border mx-auto mt-3"
           />
         </div>
-      </div>
-      <div className="flex flex-col mx-auto w-96">
-        <input
-          type="file"
-          accept="image/*"
-          className="file-input file-input-bordered w-full"
-          onChange={onInputChange}
-        />
       </div>
     </div>
   );

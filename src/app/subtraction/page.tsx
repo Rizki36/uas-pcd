@@ -81,7 +81,7 @@ const Subtraction = () => {
 
   return (
     <div className="h-full flex flex-col justify-center items-center">
-      <div className="grid grid-cols-2 mb-8 w-full">
+      <div className="grid gap-y-4 md:gap-y-0 md:grid-cols-2 mb-8 w-full">
         <div className="flex items-center justify-center flex-col">
           <div className="mb-3">Input A</div>
           <canvas
