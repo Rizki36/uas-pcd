@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 
 import Sidebar from "./Components/Sidebar";
-import Head from "next/head";
+import ThemeWrapper from "./Components/ThemeWrapper";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,15 +17,13 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  if (typeof window !== "undefined") return;
-
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
-        <div className="flex min-h-screen flex-col md:flex-row">
+        <ThemeWrapper className="flex min-h-screen flex-col md:flex-row">
           <Sidebar />
-          <div className="bg-base-100 flex-1">{children}</div>
-        </div>
+          <div className="bg-base-100 flex-1 py-4">{children}</div>
+        </ThemeWrapper>
       </body>
     </html>
   );

@@ -72,7 +72,7 @@ const Multiplication = () => {
 
   return (
     <div className="h-full flex flex-col justify-center items-center">
-      <div className="flex flex-col mx-auto w-96 mb-9">
+      <div className="flex flex-col mx-auto w-full md:w-96 mb-9 px-2">
         <input
           type="file"
           accept="image/*"
@@ -80,13 +80,14 @@ const Multiplication = () => {
           onChange={onInputChange}
         />
       </div>
-      <div className="grid gap-y-3 md:gap-y-0 md:grid-cols-[1fr,100px,1fr] mb-8 w-full">
+      <div className="grid gap-y-3 md:gap-y-0 md:grid-cols-[1fr,100px,1fr] mb-8 w-full px-2">
         <div className="flex order-2 md:order-1 items-center justify-center flex-col">
           <div className="mb-3">Input</div>
           <canvas
             ref={inputCanvasRef}
-            id="input"
-            className="w-96 h-64 border mx-auto mt-3"
+            height={256}
+            width={320}
+            className="border mx-auto mt-3"
           />
         </div>
         <div className="flex text-xs order-1 md:order-2 items-center justify-center flex-col">
@@ -106,8 +107,9 @@ const Multiplication = () => {
           <div className="mb-3">Output</div>
           <canvas
             ref={outputCanvasRef}
-            id="output"
-            className="w-96 h-64 border mx-auto mt-3"
+            height={256}
+            width={320}
+            className="border mx-auto mt-3"
           />
         </div>
       </div>

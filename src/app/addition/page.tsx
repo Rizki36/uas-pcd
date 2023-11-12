@@ -87,8 +87,8 @@ const Addition = () => {
           <div className="mb-3">Input A</div>
           <canvas
             ref={inputACanvasRef}
-            width={384}
             height={256}
+            width={320}
             className="border mx-auto mt-3"
           />
           <input
@@ -145,8 +145,8 @@ const Addition = () => {
           <div className="mb-3">Input B</div>
           <canvas
             ref={inputBCanvasRef}
-            width={384}
             height={256}
+            width={320}
             className="border mx-auto mt-3"
           />
           <input
@@ -200,7 +200,7 @@ const Addition = () => {
           />
         </div>
       </div>
-      <div className="flex flex-col mx-auto w-96">
+      <div className="flex flex-col mx-auto w-full md:w-96 px-2">
         <button onClick={onProcess} className="btn btn-primary mt-3">
           Process
         </button>
@@ -209,8 +209,8 @@ const Addition = () => {
         <div className="my-3 text-center">Output</div>
         <canvas
           ref={outputCanvasRef}
-          width={384}
           height={256}
+          width={320}
           className="border mx-auto mt-3"
         />
       </div>

@@ -68,20 +68,22 @@ const ToNegative = () => {
           <div className="mb-3">Input</div>
           <canvas
             ref={inputCanvasRef}
-            id="input"
-            className="w-96 h-64 border mx-auto mt-3"
+            height={256}
+            width={320}
+            className="border mx-auto mt-3"
           />
         </div>
         <div className="flex items-center justify-center flex-col">
           <div className="mb-3">Output</div>
           <canvas
             ref={outputCanvasRef}
-            id="output"
-            className="w-96 h-64 border mx-auto mt-3"
+            height={256}
+            width={320}
+            className="border mx-auto mt-3"
           />
         </div>
       </div>
-      <div className="order-1 md:order-2 mb-5 md:mb-0 flex flex-col mx-auto w-96">
+      <div className="order-1 md:order-2 mb-5 md:mb-0 flex flex-col mx-auto w-full md:w-96 px-2">
         <input
           type="file"
           accept="image/*"
