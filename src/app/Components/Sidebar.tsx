@@ -46,10 +46,10 @@ const Sidebar = () => {
       <div className="mx-auto text-center my-2">
         <a
           href="https://devfitra.com"
-          className="btn btn-ghost normal-case text-xl flex-col"
+          className="btn btn-ghost normal-case text-xl flex-col gap-0"
           target="_blank"
         >
-          <Logo height={32} width={32} className="shrink-0 block" />
+          <Logo height={32} width={32} className="shrink-0 block -ml-2" />
           <span className="shrink-0">DevFitra</span>
         </a>
       </div>
