@@ -90,7 +90,7 @@ const Multiplication = () => {
           />
         </div>
         <div className="flex text-xs order-1 md:order-2 items-center justify-center flex-col">
-          Multiple by
+          Multiplied by
           <input
             type="number"
             className="input input-bordered text-xs w-full max-w-[384px] md:max-w-[70px]"
